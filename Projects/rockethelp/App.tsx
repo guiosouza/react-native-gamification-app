@@ -1,5 +1,5 @@
 import { NativeBaseProvider, StatusBar } from "native-base";
-import SignIn from "./src/screens/SignIn";
+import Home from "./src/screens/Home";
 import { THEME } from "./src/styles/theme";
 import {
   useFonts,
@@ -18,7 +18,7 @@ const App = () => {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <SignIn /> : <Loading />}
+      {fontsLoaded ? <Home /> : <Loading />}
     </NativeBaseProvider> 
   );
 };
