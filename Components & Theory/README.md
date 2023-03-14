@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Lista de componentes para uso
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[1# - FlatList](https://github.com/guiosouza/React-Native/edit/main/Components%20&%20Theory/README.md#flatlist)
 
-## Available Scripts
+## FlatList
 
-In the project directory, you can run:
+O componente abaixo (ListScreen) é um componente de lista no React Native que utiliza o componente FlatList. Ele renderiza uma lista de amigos (ou qualquer outro item que você queira exibir) que é passada para ele através do objeto friends.
 
-### `npm start`
+Ao definir a propriedade keyExtractor da FlatList, estamos informando ao componente como extrair a chave única de cada item na lista (neste caso, estamos usando o nome do amigo). Isso ajuda a otimizar a renderização, uma vez que o React sabe qual item foi adicionado, modificado ou removido, minimizando o número de re-renderizações necessárias.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A propriedade data contém a lista de amigos que será exibida, e a propriedade renderItem define como cada item da lista será renderizado. Neste caso, estamos usando uma função de retorno de chamada (renderItem={({ item }) => {...}}) para renderizar cada item como um componente Text que exibe o nome do amigo.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Este componente é uma ótima maneira de exibir uma lista de itens em seu aplicativo React Native de forma eficiente e com aparência profissional. Você pode personalizar ainda mais este componente adicionando estilos ao objeto styles utilizando a API StyleSheet do React Native.
 
-### `npm test`
+```JSX
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import React from "react";
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const ListScreen = () => {
+  const friends = [
+    { name: "Friend #1" },
+    { name: "Friend #3" },
+    { name: "Friend #4" },
+    { name: "Friend #2" },
+    { name: "Friend #5" },
+    { name: "Friend #6" },
+    { name: "Friend #7" },
+    { name: "Friend #8" },
+    { name: "Friend #9" },
+    { name: "Friend #10" },
+  ];
+  return (
+    <FlatList
+      keyExtractor={(friend) => friend.name}
+      data={friends}
+      renderItem={({ item }) => {
+        // DESCRIPTION OF RENDERITEM PROP:
+        // element === {item: {name: "Friend #1"}, index: 0}
 
-### `npm run build`
+        return <Text>{item.name}</Text>;
+      }}
+    />
+  );
+};
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const styles = StyleSheet.create({});
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+export default ListScreen;
+```
