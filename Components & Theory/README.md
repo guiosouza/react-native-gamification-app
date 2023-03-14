@@ -1,6 +1,6 @@
 # Lista de componentes para uso
 
-[1# - FlatList](https://github.com/guiosouza/React-Native/edit/main/Components%20&%20Theory/README.md#flatlist)
+[1# - FlatList](#flatlist)
 
 ## FlatList
 
