@@ -18,11 +18,15 @@ const MAPPING = {
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
-  'person': 'person', // Mapeamento correto para o ícone de perfil
-  // ou se quiser um ícone mais estilizado:
-  'person.fill': 'person', // Versão preenchida
-  'person.circle': 'account-circle', // Alternativa com círculo
-  'person.crop.circle': 'account-circle' // Outra alternativa
+  'person': 'person', 
+  'person.fill': 'person', 
+  'person.circle': 'account-circle', 
+  'person.crop.circle': 'account-circle',
+  'checklist': 'check-box-outline-blank',
+  'checklist.checked': 'check-box',
+  'chart.bar': 'bar-chart',
+  'chart.bar.fill': 'bar-chart',
+  
 } as IconMapping;
 
 /**
